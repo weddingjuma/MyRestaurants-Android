@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        Typeface ostrichFont = Typeface.createFromAsset(getAssets(), "fonts/roboto-bold.ttf");
-        mAppNameTextView.setTypeface(ostrichFont);
+        Typeface robotoFont = Typeface.createFromAsset(getAssets(), "fonts/roboto-bold.ttf");
+        mAppNameTextView.setTypeface(robotoFont);
 
         mFindRestaurantsButton.setOnClickListener(this);
     }
