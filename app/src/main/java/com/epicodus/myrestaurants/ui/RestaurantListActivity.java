@@ -28,13 +28,12 @@ import butterknife.ButterKnife;
 public class RestaurantListActivity extends AppCompatActivity {
     public static final String TAG = RestaurantListActivity.class.getSimpleName();
     //NEW
-    private SharedPreferences mSharedPreferences;
-    private String mRecentAddress;
+//    private SharedPreferences mSharedPreferences;
+//    private String mRecentAddress;
 
     @Bind(R.id.recyclerView)
     RecyclerView mRecyclerView;
     private RestaurantListAdapter mAdapter;
-
     public ArrayList<Restaurant> mRestaurants = new ArrayList<>();
 
     @Override
@@ -44,15 +43,15 @@ public class RestaurantListActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-//        String location = intent.getStringExtra("location");
+        String location = intent.getStringExtra("location");
 
-//        getRestaurants(location);
+        getRestaurants(location);
         //NEW
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
-        if (mRecentAddress != null) {
-            getRestaurants(mRecentAddress);
-        }
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+//        if (mRecentAddress != null) {
+//            getRestaurants(mRecentAddress);
+//        }
     }
 
     private void getRestaurants(String location) {
