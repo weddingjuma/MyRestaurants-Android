@@ -87,7 +87,9 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Log.d(TAG, "Authentication successful");
+//                            Log.d(TAG, "Authentication successful");
+                            Toast.makeText(CreateAccountActivity.this, "Success",
+                                    Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(CreateAccountActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
